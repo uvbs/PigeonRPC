@@ -18,7 +18,7 @@ PigeonRPC这是一个简单的基于XMPP信道的python rpc框架, 目标完全�
 创建一个echo服务, 然后将这个对象绑到XMPPServer服务上, XmppRPCServer的构造函数第一个参数是gtalk id, 第二个是密码, 第三个是一个object，用于提供rpc服务.
 *sample_server.py*
 
-{% highlight python %}
+``` 
 from xmpprpc import *
 
 class RPCObject:
@@ -32,13 +32,12 @@ if __name__ == '__main__':
     rpcObj = RPCObject()
     srv = XmppRPCServer('c4pt0r.bot1@gmail.com', 'password.secret', rpcObj )
     srv.listen()
+```
 
-{% endhighlight %}
 
+*sample_client.py* 
 
-*sample_client.py*
-{% highlight python %}
-
+```
 from xmpprpc import *
 
 if __name__ =='__main__':
@@ -49,11 +48,11 @@ if __name__ =='__main__':
     print remote_obj.echo('hello world')
     client.stop() #需要在结束之前调用下，让bot下线
 
-{% endhighlight %}
+```
 
 ###Source
 
-	git clone …
+	https://github.com/c4pt0r/PigeonRPC
 
 
 PigeonRPC依赖pydns和xmpppy
